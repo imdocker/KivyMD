@@ -37,7 +37,7 @@ RUN pip3 install cython git+https://github.com/kivy/python-for-android.git
 RUN    sudo mkdir manbuild && sudo chown user manbuild && cd manbuild \
     && wget --quiet https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip && wget --quiet https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip \
     && unzip -q -d sdk  sdk-tools-linux-4333796.zip && unzip -q android-ndk-r17c-linux-x86_64.zip && rm *.zip \
-    && cd sdk/tools/bin && echo -ne 'y\n' | ./sdkmanager "platforms;android-28" && ./sdkmanager "build-tools;28.0.3"
+    && cd sdk/tools/bin && while true; do echo "y"; sleep 1; done  | ./sdkmanager "platforms;android-28" && ./sdkmanager "build-tools;28.0.3"
 
 COPY . app
 
