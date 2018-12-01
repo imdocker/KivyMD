@@ -11,7 +11,7 @@ RUN apt update -qq > /dev/null && \
     locales && \
     locale-gen en_US.UTF-8 && \
     apt install -qq --yes mc openssh-client nano wget curl pkg-config autoconf automake libtool git && apt install -qq --yes --no-install-recommends \
-    sudo openjdk-8-jdk zip unzip virtualenv python3-pip python3-setuptools file zlib1g-dev
+    sudo openjdk-8-jdk zip unzip virtualenv python3-pip python3-setuptools file zlib1g-dev time
 
 
 ENV LANG="en_US.UTF-8" \
