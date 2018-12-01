@@ -1,0 +1,14 @@
+--dist_name=py3-sink
+--private .
+--package=com.kivymd.test
+--name KivyMD
+--bootstrap=sdl2
+--requirements=python3,kivy,git+https://github.com/HeaTTheatR/KivyMD.git
+--arch=armeabi-v7a
+--icon <ICON>.png
+--sdk_dir /home/user/hostcwd/manbuild/sdk
+--ndk_dir /home/user/hostcwd/manbuild/android-ndk-r17c
+--android_api 28
+--ndk_version 17c
+--ndk-api 21
+--version 0.0.1
