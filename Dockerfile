@@ -32,12 +32,22 @@ WORKDIR ${WORK_DIR}
 
 USER ${USER}
 
-RUN pip3 install cython==0.25.2 git+https://github.com/kivy/python-for-android.git git+https://github.com/HeaTTheatR/KivyMD.git
+RUN pip3 install cython==0.28.5 git+https://github.com/kivy/python-for-android.git@ git+https://github.com/HeaTTheatR/KivyMD.git
+
+# Crystax-NDK
+ARG CRYSTAX_NDK_VERSION=10.3.2
+ARG CRYSTAX_HASH=7305b59a3cee178a58eeee86fe78ad7bef7060c6d22cdb027e8d68157356c4c0
 
 RUN    sudo mkdir manbuild && sudo chown user manbuild && cd manbuild \
     && wget --quiet https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip && wget --quiet https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip \
     && unzip -q -d sdk  sdk-tools-linux-4333796.zip && unzip -q android-ndk-r17c-linux-x86_64.zip && rm *.zip \
     && cd sdk/tools/bin && while true; do echo "y"; sleep 1; done  | ./sdkmanager "platforms;android-28" && ./sdkmanager "build-tools;28.0.3"
+    
+RUN cd manbuild &&  set -ex \
+  && wget --quiet https://www.crystax.net/download/crystax-ndk-${CRYSTAX_NDK_VERSION}-linux-x86_64.tar.xz?interactive=true -O ~/.buildozer/crystax-${CRYSTAX_NDK_VERSION}.tar.xz \
+  && echo "${CRYSTAX_HASH}  crystax-${CRYSTAX_NDK_VERSION}.tar.xz" | sha256sum -c \
+  && time tar -xf crystax-${CRYSTAX_NDK_VERSION}.tar.xz  --strip-components=1 && rm crystax-${CRYSTAX_NDK_VERSION}.tar.xz
+
 
 COPY . app
 
