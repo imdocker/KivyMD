@@ -8,7 +8,7 @@
 --icon /home/user/hostcwd/app/kivymd/images/kivymd_logo.png
 --sdk_dir /home/user/hostcwd/manbuild/sdk
 --ndk_dir /home/user/hostcwd/manbuild/crystax-ndk-10.3.2
---android_api 28
+--android_api 19
 --ndk_version 17c
 --ndk-api 21
 --version 0.0.1
