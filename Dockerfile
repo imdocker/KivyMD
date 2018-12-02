@@ -44,7 +44,7 @@ RUN    sudo mkdir manbuild && sudo chown user manbuild && cd manbuild \
     && cd sdk/tools/bin && while true; do echo "y"; sleep 1; done  | ./sdkmanager "platforms;android-28" && ./sdkmanager "build-tools;28.0.3"
     
 RUN cd manbuild &&  set -ex \
-  && wget --quiet https://www.crystax.net/download/crystax-ndk-${CRYSTAX_NDK_VERSION}-linux-x86_64.tar.xz?interactive=true -O ~/.buildozer/crystax-${CRYSTAX_NDK_VERSION}.tar.xz \
+  && wget --quiet https://www.crystax.net/download/crystax-ndk-${CRYSTAX_NDK_VERSION}-linux-x86_64.tar.xz?interactive=true -O crystax-${CRYSTAX_NDK_VERSION}.tar.xz \
   && echo "${CRYSTAX_HASH}  crystax-${CRYSTAX_NDK_VERSION}.tar.xz" | sha256sum -c \
   && time tar -xf crystax-${CRYSTAX_NDK_VERSION}.tar.xz  --strip-components=1 && rm crystax-${CRYSTAX_NDK_VERSION}.tar.xz
 
