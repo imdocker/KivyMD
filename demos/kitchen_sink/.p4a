@@ -3,11 +3,11 @@
 --package=com.kivymd.test
 --name KivyMD
 --bootstrap=sdl2
---requirements=python3,kivy
+--requirements=python3crystax,kivy
 --arch=armeabi-v7a
 --icon /home/user/hostcwd/app/kivymd/images/kivymd_logo.png
 --sdk_dir /home/user/hostcwd/manbuild/sdk
---ndk_dir /home/user/hostcwd/manbuild/android-ndk-r17c
+--ndk_dir /home/user/hostcwd/manbuild/crystax-ndk-10.3.2
 --android_api 28
 --ndk_version 17c
 --ndk-api 21
