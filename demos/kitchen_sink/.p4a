@@ -5,7 +5,7 @@
 --bootstrap=sdl2
 --requirements=python3,kivy
 --arch=armeabi-v7a
---icon /home/user/kivymd/kivymd/images/kivymd_logo.png
+--icon /home/user/hostcwd/kivymd/kivymd/images/kivymd_logo.png
 --sdk_dir /home/user/hostcwd/manbuild/sdk
 --ndk_dir /home/user/hostcwd/manbuild/android-ndk-r17c
 --android_api 28
